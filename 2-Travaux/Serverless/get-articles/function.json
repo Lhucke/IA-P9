@@ -1,0 +1,37 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    },
+    {
+      "type": "blob",
+      "direction": "in",      
+      "name": "embeddings",
+      "path": "data-reduced/articles_embeddings_reduced.pickle",
+      "connection": "AzureStorageConnection",
+      "dataType": "binary"
+    },
+    {
+      "type": "blob",
+      "direction": "in",      
+      "name": "clicks",
+      "path": "data-reduced/clicks_reduced.pickle",
+      "connection": "AzureStorageConnection",
+      "dataType": "binary"
+    }
+
+  ]
+}

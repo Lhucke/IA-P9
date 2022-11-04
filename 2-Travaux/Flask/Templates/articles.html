@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Masques</title>
+  </head>
+  <body> 
+    <div>
+      <h1>Recommandation d'articles</h1>
+      <form method="post">
+          <div>
+              <label for="user_id">Choisir l'identifiant de l'utilisateur (nombre entre 0 et 110 147) :</label>
+              <br>
+              <input id="user_id" name="user_id" type="number" min="0" max="110147"></input>
+          </div>
+          <button type="submit">Soumettre</button>
+      </form>
+      <div>
+        <table>
+          <thead>
+              <tr>
+                  <th colspan="5">Articles recommandés</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>               
+              {% for i in articles: %}
+                <td>{% print(i) %}</td>
+              {% endfor %}
+              </tr>
+          </tbody>
+        </table>     
+      </div>   
+  </body>
+
+  <style>
+    body {background-color: #030332; color: #fff; text-align: center; padding: 20px; font-size:18px}
+    #user_id {margin: 10px}
+    table,
+    td {border: 1px solid rgb(149, 97, 23); display: inline-block; font-size:25px}
+    thead,
+    tfoot {background-color: rgba(252, 176, 69, 0.644); color: #fff;}
+    table{margin: 20px}
+  </style>
+</html>
